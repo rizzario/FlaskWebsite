@@ -10,6 +10,7 @@ env/
 Lib/
 Scripts/
 dist/
+certs/
 
 # Editor-specific
 .vscode/
@@ -25,3 +26,8 @@ Thumbs.db
 *.log
 *.sqlite
 *.sqlite3
+
+# File Specifics
+*.cim
+*.CSV
+*.csv

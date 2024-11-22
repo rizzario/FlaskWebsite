@@ -322,6 +322,8 @@ class Customer_FCC:
         if file.filename == '':
             return jsonify({"success": False, "message": "No selected file!"})
         
+        print(request.form.get("transfer_submit_fcc"))
+        
         if file and self.fcc_allowed_file(file.filename):
             filename = secure_filename(file.filename)
             local_filepath = os.path.join(upload_folder, filename)

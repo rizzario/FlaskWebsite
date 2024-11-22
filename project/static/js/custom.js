@@ -27,6 +27,7 @@ $('.team_carousel').owlCarousel({
 
 document.getElementById("Uploadbutton_fcc").onclick = function() {
     document.getElementById('fileInput_fcc').click();
+    document.getElementById('filepath_fcc').innerHTML = "No file selected.";
 };    
 document.getElementById('fileInput_fcc').onchange = function() {
     document.getElementById('filepath_fcc').innerHTML = this.files[0].name;
@@ -85,6 +86,7 @@ cleardataForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
     var cleardataredirect = document.getElementById('clear_data_fcc').value;
+    $('#cleardata_submit_fcc').attr('disabled','disabled');
     
     let clearDataMessage = document.getElementById('cleardataMessage_fcc');
     fetch(cleardataredirect, {
@@ -98,8 +100,9 @@ cleardataForm.addEventListener('submit', function(event) {
             clearDataMessage.textContent =  "Success: " + data.message;
             setTimeout (function () {
                 window.location.href = cleardataredirect.substring(0, cleardataredirect.lastIndexOf('/'));
-            }, 3000);
+            }, 2000);
         } else {
+            $('#cleardata_submit_fcc').removeAttr('disabled');
             clearDataMessage.classList.remove("alert-success");
             clearDataMessage.classList.add("alert-danger");
             clearDataMessage.textContent = "Error: " + data.message;
@@ -107,6 +110,7 @@ cleardataForm.addEventListener('submit', function(event) {
     })
     .catch(error => {
         // Handle any errors
+        $('#cleardata_submit_fcc').removeAttr('disabled');
         clearDataMessage.classList.remove("alert-success");
         clearDataMessage.classList.add("alert-danger");
         clearDataMessage.textContent = "Error: Could not clear data.";
@@ -267,7 +271,9 @@ var transferForm = document.getElementById('uploadForm_fcc');
 transferForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const submitTransfer = document.getElementById('transfer_submit_fcc');
+    // Disable the submit button to prevent duplicate submissions
+    $('#transfer_submit_fcc').attr('disabled','disabled');
+    transferForm.setAttribute('data-sending','true');
 
     // Create a FormData object to hold the uploaded file
     var formData = new FormData();
@@ -296,12 +302,11 @@ transferForm.addEventListener('submit', function(event) {
             statusMessage.classList.remove("alert-danger");
             statusMessage.classList.add("alert-success");
             statusMessage.textContent = "File uploaded and data updated successfully!";
-            submitTransfer.disabled = true;
-            document.getElementById('transfer_submit_fcc').classList.toggle("disabled");
             setTimeout (function () {
                 window.location.href = redirecturl.substring(0, redirecturl.lastIndexOf('/'));
-            }, 3000);
+            }, 2000);
         } else {
+            $('#transfer_submit_fcc').removeAttr('disabled');
             statusMessage.classList.remove("alert-success");
             statusMessage.classList.add("alert-danger");
             statusMessage.textContent = "Error: " + data.message;
@@ -309,12 +314,14 @@ transferForm.addEventListener('submit', function(event) {
     })
     .catch(error => {
         // Handle any errors
+        $('#transfer_submit_fcc').removeAttr('disabled');
         statusMessage.classList.remove("alert-success");
         statusMessage.classList.add("alert-danger");
         statusMessage.textContent = "Error: Could not upload file.";
         console.error(error);
     });
 });
+
 function validatetransferForm() {
     const soldto = document.forms["uploadForm_fcc"]["soldto_fcc"].value.trim();
     const shipto = document.forms["uploadForm_fcc"]["shipto_fcc"].value.trim();
@@ -326,9 +333,7 @@ function validatetransferForm() {
         alert("All fields must be filled out and should not contain only spaces.");
         console.log("false");
         return false;
-        
     }
-    console.log("true");
     return true;
 };
 

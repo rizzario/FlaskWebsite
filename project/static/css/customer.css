@@ -147,6 +147,11 @@
     font-weight: bold;
     transition: all 0.5s ease;
 }
+.modal-footer button:disabled {
+    color: var(--black);
+    background-color: darkgrey;
+    cursor: not-allowed;
+}
 .button-export {
     flex: 15%;
     background-color: var(--main-color);

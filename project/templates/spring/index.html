@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="menu_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="greet_detail">Precision Spring <br/> Menu</h4>
+                <div class="img-box"><img src="{{ url_for('static', filename='images/Woman-present.jpg') }}" alt=""></div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <h3 class="section_header">Select customer that you want to process.</h3>
+                    {% for button in customer_list["precision"] %}
+                        <a class="col-md-6 p-1" id="{{ button['name'] }}" href="{{ button['path'] }}">
+                        <button type="button" class="btn btn--green">
+                            <span class="btn__txt">{{ button['name'] }}</span>
+                            <i class="btn__bg" aria-hidden="true"></i>
+                            <i class="btn__bg" aria-hidden="true"></i>
+                            <i class="btn__bg" aria-hidden="true"></i>
+                            <i class="btn__bg" aria-hidden="true"></i>
+                        </button>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+  </div>
+</section>
+{% endblock %}

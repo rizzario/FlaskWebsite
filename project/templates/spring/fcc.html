@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="fcc-section">
+    <div class="container">
+        <h2>FCC Sales Order Program</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="module-group">
+                    <a data-toggle="modal" data-target="#SOrunningModal_fcc">Sales Order Running</a>
+                    <a data-toggle="modal" data-target="#CIMcreateModal_fcc">Convert Data to CIM format</a>
+                    <a data-toggle="modal" data-target="#ClearSOModal_fcc">Clear Sales Order Number</a>
+                    <a data-toggle="modal" data-target="#TransferModal_fcc">Transfer Data to System</a>
+                    <a data-toggle="modal" data-target="#ClearDataModal_fcc">Remove All Data</a>
+                    <a href="{{ url_for('menu.spring_index') }}">Exit</a>
+                </div>
+            </div>
+            <div class="col-md-7 table-group">
+                {% include 'spring/fcc/table.html' %}
+            </div>
+        </div>
+        <!-- Modal Zone -->
+        <!-- transfer data -->
+        {% include 'spring/fcc/transfer.html' %}
+        <!-- clear sales order data  -->
+        {% include 'spring/fcc/clearso.html' %}
+        <!-- sales order running -->
+        {% include 'spring/fcc/sorunning.html' %}
+        <!-- clear data -->
+        {% include 'spring/fcc/deletedata.html' %}
+        <!-- cim create  -->
+        {% include 'spring/fcc/cimcreate.html' %}
+    </div>
+</section>
+{% endblock %}

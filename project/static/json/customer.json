@@ -1,0 +1,102 @@
+{
+    "automotive": [
+        {
+            "name":"AAT",
+            "group":"automotive",
+            "path":"/menu/automotive/aat",
+            "template":"aat.html"
+        },
+        {
+            "name":"Asian Honda",
+            "group":"automotive",
+            "path":"/menu/automotive/asian_honda",
+            "template":"asian_honda.html"
+        },
+        {
+            "name":"Ford",
+            "group":"automotive",
+            "path":"/menu/automotive/ford",
+            "template":"ford.html"
+        },
+        {
+            "name":"HHT",
+            "group":"automotive",
+            "path":"/menu/automotive/hht",
+            "template":"hht.html"
+        },
+        {
+            "name":"Isuzu IMKDC",
+            "group":"automotive",
+            "path":"/menu/automotive/isuzu_imkdc",
+            "template":"isuzu_imkdc.html"
+        },
+        {
+            "name":"Isuzu IMKDC IGCE",
+            "group":"automotive",
+            "path":"/menu/automotive/isuzu_imkdc_igce",
+            "template":"isuzu_imkdc_igce.html"
+        },
+        {
+            "name":"Isuzu Boss",
+            "group":"automotive",
+            "path":"/menu/automotive/isuzu_boss_random",
+            "template":"isuzu_boss_random.html"
+        },
+        {
+            "name":"Isuzu New",
+            "group":"automotive",
+            "path":"/menu/automotive/isuzu",
+            "template":"isuzu.html"
+        },
+        {
+            "name":"MMTH Synchro",
+            "group":"automotive",
+            "path":"/menu/automotive/mmth_synchro",
+            "template":"mmth_synchro.html"
+        },
+        {
+            "name":"MMTH 2",
+            "group":"automotive",
+            "path":"/menu/automotive/mmth",
+            "template":"mmth.html"
+        },
+        {
+            "name":"New Honda",
+            "group":"automotive",
+            "path":"/menu/automotive/new_honda",
+            "template":"new_honda.html"
+        },
+        {
+            "name":"Showa",
+            "group":"automotive",
+            "path":"/menu/automotive/showa",
+            "template":"showa.html"
+        },
+        {
+            "name":"SNA",
+            "group":"automotive",
+            "path":"/menu/automotive/sna",
+            "template":"sna.html"
+        },
+        {
+            "name":"TBAS",
+            "group":"automotive",
+            "path":"/menu/automotive/tbas",
+            "template":"tbas.html"
+        }
+    ],
+    "precision": [
+        {
+            "name":"FCC",
+            "group":"spring",
+            "path":"/menu/spring/fcc",
+            "template":"fcc.html"
+        },
+        {
+            "name":"Thai Honda",
+            "group":"spring",
+            "path":"/menu/spring/thai_honda",
+            "template":"thai_honda.html"
+        }
+    ]
+}

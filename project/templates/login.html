@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="slider_section">
+    <div class="dot_design"><img src="{{ url_for('static', filename='images/dots.png') }}" alt=""></div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <img class="alt-logo" src="https://www.nhkspg.co.jp/hubfs/nhkspg.co.jp/images/top/hayawakar_thum.jpg" alt="NHK"><br />
+                    <div class="form-box">
+                        <h6 class="title">กรุณาใส่ชื่อผู้ใช้ และรหัสผ่าน MFG/Pro หน้าแรก</h6>
+                        <form method="POST" action="{{ url_for('auth.login') }}">
+                            <div class="form-row col-md-6 mx-sm-2">
+                                <input
+                                    type="hidden"
+                                    name="next"
+                                    value="{{ request.args.get('next', '') }}"
+                                />
+                                <div class="form-check col-md-6">
+                                    <input class="form-check-input" type="radio" name="hostname" id="prod" value="10.1.100.56" checked>
+                                    <label calss="form-check-label" for="prod">
+                                        Production
+                                    </label>
+                                </div>
+                                <div class="form-check col-md-6">
+                                    <input class="form-check-input" type="radio" name="hostname" id="crp" value="10.1.100.57">
+                                    <label calss="form-check-label" for="crp">
+                                        CRP
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" name="username" placeholder="ชื่อผู้ใช้งาน MFG/Pro" autofocus="" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="password" name="password" placeholder="รหัสผ่าน" required>
+                            </div>
+                            <button class="button is-block is-info is-large is-fullwidth">ลงชื่อเข้าใช้</button>
+                        </form>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="notification">
+                                {{ messages[0] }}
+                            </div>
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img-box"><img src="{{ url_for('static', filename='images/Office-work-slider.jpg') }}" alt=""></div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

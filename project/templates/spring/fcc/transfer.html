@@ -1,0 +1,61 @@
+<!--Transfer Data Modal -->
+<div class="modal fade" id="TransferModal_fcc" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title">FCC Transfer Sales Order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose_fcc">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <!-- Form inside modal -->
+        <form id="uploadForm_fcc" method="POST" action="{{ url_for('menu.fcc_upload_file') }}" onsubmit="return validatetransferForm()" enctype="multipart/form-data">
+            <div class="form-fill-data">
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="soldto">Sold To</label>
+                        <input type="text" class="form-control" id="soldto_fcc" name="soldto_fcc" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="shipto">Ship To</label>
+                        <input type="text" class="form-control" id="shipto_fcc" name="shipto_fcc" required>
+                    </div>
+                </div>
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="site">Site</label>
+                        <input type="text" class="form-control" id="site_fcc" name="site_fcc" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taxclass">Taxclass</label>
+                        <input type="text" class="form-control" id="taxclass_fcc" name="taxclass_fcc" required>
+                    </div>
+                </div>
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="PriceTbl">Price Tbl</label>
+                        <input type="text" class="form-control" id="PriceTbl_fcc" name="PriceTbl_fcc" required>
+                    </div>
+                </div>
+                <div class="form-group form-flex">
+                    <div class="form-label" >File Path:</div>
+                    <div class="form-label-body" id="filepath_fcc" name="filepath_fcc">No file selected.</div>
+                    <button type="button" class="form-button" id="Uploadbutton_fcc">Upload</button>
+                </div>
+                <div class="form-group form-hidden">
+                    <input type="file" id="fileInput_fcc" name="fileInput_fcc" accept=".csv">
+                    <input type="text" id="redirecturl_fcc" name="redirecturl_fcc" value="/menu/spring/fcc/upload" disabled>
+                </div>
+            </div>
+            
+            <div id="uploadMessage_fcc" class="my-3 alert uploadMessage"></div>
+            <div class="modal-footer">
+                <button type="submit" class="form-button-submit" id="transfer_submit_fcc">OK</button>
+                <button type="reset" class="form-button-close" data-dismiss="modal">Close</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>

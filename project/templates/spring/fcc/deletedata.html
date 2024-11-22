@@ -1,0 +1,26 @@
+<!--Clear data Modal -->
+<div class="modal fade" id="ClearDataModal_fcc" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModalLabel">FCC Clear Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="cleardataForm_fcc" method="POST" action="{{ url_for('menu.fcc_clear_data') }}">
+                    <div class="form-label-center">Clear all data before process</div>
+                    <div class="form-group form-hidden">
+                        <input type="text" id="clear_data_fcc" name="clear_data_fcc" value="/menu/spring/fcc/remove" disabled>
+                    </div>
+                    <div id="cleardataMessage_fcc" class="my-3 alert"></div>
+                    <div class="modal-footer">
+                        <button type="submit" class="form-button-submit">OK</button>
+                        <button type="reset" class="form-button-close" data-dismiss="modal" id="btnClose">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 

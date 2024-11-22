@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="notfound_section">
+    <div class="group_block">
+        <img class="notfound_img" src="{{ url_for('static', filename='images/404.jpg') }}" alt="404">
+        <h1>Oops! - Page Not Found</h1>
+        <p> the page you're looking for does not exists.</p>
+        <a href="{{ url_for('main.index')}}">Home Page</a>
+    </div>
+</section>
+{% endblock %}

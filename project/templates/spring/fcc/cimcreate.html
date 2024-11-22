@@ -1,0 +1,48 @@
+<!--CIM data Modal -->
+<div class="modal fade" id="CIMcreateModal_fcc" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModalLabel">FCC CIM Create</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- <form id="cimcreateForm_fcc" method="POST" action="{{ url_for('menu.fcc_cim_create') }}">
+                    <div class="form-label-center">Create CIM file for MFG/PRO</div>
+                    <div class="form-flex form-group">
+                        <div class="form-label">File Name:</div>
+                        <input type="text" class="form-label-body" id="outputfile_fcc" name="outputfile_fcc" autofocus required>
+                        
+                        <input type="submit" name="export" value="export" class="form-button-submit">
+                    </div>
+                    <div class="form-group form-hidden">
+                        <input type="text" id="cim_create_url_fcc" name="cim_create_url_fcc" value="/menu/spring/fcc/cimcreate" disabled>
+                    </div>
+                    <div id="cim_create_message_fcc" class="my-3 alert"></div>
+                    <div class="modal-footer">
+                        <button type="submit" name="ok" value="ok" class="form-button-submit">Ok</button>
+                        <button type="reset" class="form-button-close" data-dismiss="modal" id="btnClose">Close</button>
+                    </div>
+                </form> -->
+                <form id="cimcreateForm_fcc" method="POST" action="{{ url_for('menu.fcc_cim_create') }}">
+                    <div class="form-label-center">Create CIM file for MFG/PRO</div>
+                    <div class="form-flex form-group">
+                        <div class="form-label">File Name:</div>
+                        <input type="text" class="form-label-body" id="outputfile_fcc" name="outputfile_fcc" autofocus required>
+                        <button type="submit" name="export" value="export" class="form-button-submit">Export</button>
+                    </div>
+                    <div class="form-group form-hidden">
+                        <input type="text" id="cim_create_url_fcc" name="cim_create_url_fcc" value="/menu/spring/fcc/cimcreate" disabled>
+                    </div>
+                    <div id="cim_create_message_fcc" class="my-3 alert"></div>
+                    <div class="modal-footer">
+                        <button type="submit" name="ok" value="ok" class="form-button-submit">Ok</button>
+                        <button type="reset" class="form-button-close" data-dismiss="modal" id="btnClose">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 

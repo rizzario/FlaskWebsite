@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 
 # Virtual environment
+Include/
 venv/
 env/
 Lib/
@@ -17,6 +18,7 @@ dist/
 # System-specific
 *.DS_Store
 Thumbs.db
+*.cfg
 *.spec
 
 # Logs

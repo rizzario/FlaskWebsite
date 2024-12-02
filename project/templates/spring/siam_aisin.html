@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="siam_aisin-section">
+    <div class="container">
+        <h2>Siam Aisin Sales Order Program</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="module-group">
+                    <a data-toggle="modal" data-target="#SOrunningModal_siam_aisin">Sales Order Running</a>
+                    <a data-toggle="modal" data-target="#CIMcreateModal_siam_aisin">Convert Data to CIM format</a>
+                    <a data-toggle="modal" data-target="#ClearSOModal_siam_aisin">Clear Sales Order Number</a>
+                    <a data-toggle="modal" data-target="#TransferModal_siam_aisin">Transfer Data to System</a>
+                    <a data-toggle="modal" data-target="#ClearDataModal_siam_aisin">Remove All Data</a>
+                    <a href="{{ url_for('menu.spring_index') }}">Exit</a>
+                </div>
+            </div>
+            <div class="col-md-7 table-group">
+                {% include 'spring/siam_aisin/table.html' %}
+            </div>
+        </div>
+        <!-- Modal Zone -->
+        <!-- transfer data -->
+        {% include 'spring/siam_aisin/transfer.html' %}
+        <!-- clear sales order data  -->
+        {% include 'spring/siam_aisin/clearso.html' %}
+        <!-- sales order running -->
+        {% include 'spring/siam_aisin/sorunning.html' %}
+        <!-- clear data -->
+        {% include 'spring/siam_aisin/deletedata.html' %}
+        <!-- cim create  -->
+        {% include 'spring/siam_aisin/cimcreate.html' %}
+    </div>
+</section>
+{% endblock %}

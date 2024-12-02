@@ -1,0 +1,31 @@
+<!--CIM data Modal -->
+<div class="modal fade" id="CIMcreateModal_siam_aisin" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModalLabel">Siam Aisin CIM Create</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="cimcreateForm_siam_aisin" method="POST" action="{{ url_for('menu.siam_aisin_cim_create') }}">
+                    <div class="form-label-center">Create CIM file for MFG/PRO</div>
+                    <div class="form-flex form-group">
+                        <div class="form-label">File Name:</div>
+                        <input type="text" class="form-label-body" id="outputfile_siam_aisin" name="outputfile_siam_aisin" autofocus required>
+                        <button type="submit" name="export" value="export" class="form-button-submit">Export</button>
+                    </div>
+                    <div class="form-group form-hidden">
+                        <input type="text" id="cim_create_url_siam_aisin" name="cim_create_url_siam_aisin" value="/menu/spring/siam_aisin/cimcreate" disabled>
+                    </div>
+                    <div id="cim_create_message_siam_aisin" class="my-3 alert"></div>
+                    <div class="modal-footer">
+                        <button type="submit" name="ok" value="ok" class="form-button-submit">Ok</button>
+                        <button type="reset" class="form-button-close" data-dismiss="modal" id="btnClose">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 

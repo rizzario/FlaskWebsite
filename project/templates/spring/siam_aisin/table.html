@@ -1,0 +1,28 @@
+<!-- Table Content -->
+<h4>Sales Order Report</h4>
+<table class="table table-style" id="FCCReport_siam_aisin">
+    <thead class="header-color">
+        <!-- <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Taste</th>
+        </tr> -->
+        {% for item in header %}
+            <th>{{ item }}</th>
+        {% endfor %}
+    </thead>
+    <tbody>
+        {% for data in row %}
+            <tr class="table-row" style="display: none;">
+                {% for key, value in data.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="pagination-panel">
+    <button type="button" id="prev-btn_siam_aisin" class="disabled">Previous</button>
+    <span id="page-info_siam_aisin"></span>
+    <button type="button" id="next-btn_siam_aisin">Next</button>
+</div>

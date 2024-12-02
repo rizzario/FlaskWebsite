@@ -93,6 +93,12 @@
             "template":"fcc.html"
         },
         {
+            "name":"Siam Aisin",
+            "group":"spring",
+            "path":"/menu/spring/siam_aisin",
+            "template":"siam_aisin.html"
+        },
+        {
             "name":"Thai Honda",
             "group":"spring",
             "path":"/menu/spring/thai_honda",

@@ -1,0 +1,61 @@
+<!--Transfer Data Modal -->
+<div class="modal fade" id="TransferModal_siam_aisin" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title">Siam Aisin Transfer Sales Order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose_siam_aisin">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <!-- Form inside modal -->
+        <form id="uploadForm_siam_aisin" method="POST" action="{{ url_for('menu.siam_aisin_upload_file') }}" onsubmit="return validatetransferForm_siam_aisin()" enctype="multipart/form-data">
+            <div class="form-fill-data">
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="soldto">Sold To</label>
+                        <input type="text" class="form-control" id="soldto_siam_aisin" name="soldto_siam_aisin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="shipto">Ship To</label>
+                        <input type="text" class="form-control" id="shipto_siam_aisin" name="shipto_siam_aisin" required>
+                    </div>
+                </div>
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="site">Site</label>
+                        <input type="text" class="form-control" id="site_siam_aisin" name="site_siam_aisin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taxclass">Taxclass</label>
+                        <input type="text" class="form-control" id="taxclass_siam_aisin" name="taxclass_siam_aisin" required>
+                    </div>
+                </div>
+                <div class="form-flex">
+                    <div class="form-group">
+                        <label for="PriceTbl">Price Tbl</label>
+                        <input type="text" class="form-control" id="PriceTbl_siam_aisin" name="PriceTbl_siam_aisin" required>
+                    </div>
+                </div>
+                <div class="form-group form-flex">
+                    <div class="form-label" >File Path:</div>
+                    <div class="form-label-body" id="filepath_siam_aisin" name="filepath_siam_aisin">No file selected.</div>
+                    <button type="button" class="form-button" id="Uploadbutton_siam_aisin">Upload</button>
+                </div>
+                <div class="form-group form-hidden">
+                    <input type="file" id="fileInput_siam_aisin" name="fileInput_siam_aisin" accept=".csv">
+                    <input type="text" id="redirecturl_siam_aisin" name="redirecturl_siam_aisin" value="/menu/spring/siam_aisin/upload" disabled>
+                </div>
+            </div>
+            
+            <div id="uploadMessage_siam_aisin" class="my-3 alert uploadMessage"></div>
+            <div class="modal-footer">
+                <button type="submit" class="form-button-submit" id="transfer_submit_siam_aisin">OK</button>
+                <button type="reset" class="form-button-close" data-dismiss="modal">Close</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>

@@ -134,3 +134,43 @@ def fcc_cim_create():
 def fcc_order_running():
     return classFCC.fcc_order_running()
 ####################### FCC ##############################
+
+####################### Siam Aisin ##############################
+classSiamAisin = Customer_SiamAisin()
+
+@menu.route('/menu/spring/siam_aisin',methods=['GET'])
+def siam_aisin():
+    model_class = get_model_class("Siam_Aisin")
+    header_data = [column.name for column in model_class.__table__.columns]
+    #Get row data
+    table_data = listfromData(model_class)
+    print(current_user.username)
+    return render_template('spring/siam_aisin.html',header=header_data, row=table_data, name=current_user.username)
+
+@menu.route('/menu/spring/siam_aisin/upload', methods=['POST'])
+def siam_aisin_upload_file():
+    return classSiamAisin.siam_aisin_upload_file() #Process upload file and response json
+
+@menu.route('/menu/spring/siam_aisin/clear', methods=['POST'])
+def siam_aisin_clear_so():
+    return classSiamAisin.siam_aisin_clear_so() #Running to clear sales order
+
+@menu.route('/menu/spring/siam_aisin/remove', methods=['POST'])
+def siam_aisin_clear_data():
+    return classSiamAisin.siam_aisin_clear_data()
+
+@menu.route('/menu/spring/siam_aisin/cimcreate', methods=['POST'])
+def siam_aisin_cim_create():
+    if 'export' in request.form:
+        # Handle the export action
+        print("export")
+        return classSiamAisin.siam_aisin_export()
+    elif 'ok' in request.form:
+        print("ok")
+        # Handle the ok action
+        return classSiamAisin.siam_aisin_submit()
+
+@menu.route('/menu/spring/siam_aisin/running', methods=['POST'])
+def siam_aisin_order_running():
+    return classSiamAisin.siam_aisin_order_running()
+####################### Siam Aisin ##############################
